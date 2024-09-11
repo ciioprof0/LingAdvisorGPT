@@ -1,0 +1,16 @@
+# app
+flask==3.0.3                # for the web server
+python-dotenv==1.0.1        # for loading environment variables
+setuptools==73.0.1          # for packaging
+SQLAlchemy==2.0.32          # for database ORM
+
+# dev/tests
+loguru==0.7.1               # for enhanced logging (optional)
+mypy==1.11.2                # for static type checking
+pylint==3.2.6               # for linting
+pytest==8.3.2               # for testing
+pytest-icdiff==0.9          # for image comparison in tests
+pytest-loguru==0.4.0        # for loguru to pytest's caplog fixture 
+redis==5.0.8                # for caching
+requests==2.32.3            # for making HTTP requests
+tenacity==9.0.0             # for retrying failed tests

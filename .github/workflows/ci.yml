@@ -1,0 +1,41 @@
+name: HexArch Template CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    env:
+      IMAGE_NAME: "hexarch_template"
+      TAG: "latest"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build the docker image
+        run: |
+          docker build . --file Dockerfile --tag ${IMAGE_NAME}:${TAG}
+
+      - name: Run the tests
+        run: |
+          docker run -i --name hexarch_test_container ${IMAGE_NAME}:${TAG} bash -c "pytest ./tests --junitxml=results.xml"
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: results.xml
+          if-no-files-found: warn
+
+      - name: Stop and remove the Docker container
+        run: |
+          docker stop hexarch_test_container
+          docker rm hexarch_test_container
+
+      - name: Remove Docker image
+        run: |
+          docker rmi -f ${IMAGE_NAME}:${TAG}
