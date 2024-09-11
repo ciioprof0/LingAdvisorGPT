@@ -1,0 +1,70 @@
+# Name (max. 50 characters)
+
+<Enter name here>
+
+
+# Description (max. 300 characters)
+
+<Enter description here>
+
+
+# Instructions (max 8,000 characters total)
+
+## Add subsection
+
+<Enter subsection instructions here>
+
+
+# Conversation Starters (max 12 starters at UNK characters each)
+
+0. <Enter conversation starter here>
+
+1. <Enter conversation starter here>
+
+2. <Enter conversation starter here>
+
+3. <Enter conversation starter here.>
+
+# 4. <Enter conversation starter here>
+
+# 5. <Enter conversation starter here>
+
+# 6. <Enter conversation starter here>
+
+# 7. <Enter conversation starter here>
+
+# 8. <Enter conversation starter here>
+
+# 9. <Enter conversation starter here>
+
+# A. <Enter conversation starter here>
+
+# B. <Enter conversation starter here>
+
+
+# Knowledge (max 20 files)
+'If you upload files under Knowledge, conversations with your GPT may include file contents. Files can be downloaded when Code Interpreter is enabled.'
+
+<Enter file path here>
+
+
+# Actions
+'Let your GPT retrieve information or take actions outside of ChatGPT.'
+'[Learn More](https://help.openai.com/en/articles/8554397-creating-a-gpt)'
+'Get help from [ActionsGPT](https://chatgpt.com/g/g-TYEliDU6A-actionsgpt)'
+
+## Action 1
+
+### Authentication
+- Authentication Description:
+- Authentication Type: (None, API Key, OAuth)
+
+### Schema (OpenAPI)
+- Import URL (optional):
+
+### Privacy Policy
+- URL (required):
+
+
+# Additional Settings
+- 'Use conversation data in your GPT to improve our models:' False
