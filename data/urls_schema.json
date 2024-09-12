@@ -1,0 +1,111 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "live_root": {
+        "type": "string",
+        "format": "uri"
+      },
+      "sitemap_path": {
+        "type": "string"
+      },
+      "dev_root": {
+        "type": "string",
+        "format": "uri"
+      },
+      "pages": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "relative_path": {
+              "type": "string"
+            },
+            "last_mod": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "change_freq": {
+              "type": "string",
+              "enum": ["daily", "weekly", "monthly", "yearly", "never"]
+            },
+            "priority": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 1.0
+            },
+            "scraping_allowed": {
+              "type": "boolean"
+            },
+            "content_sensitivity": {
+              "type": "string",
+              "enum": ["low", "medium", "high"]
+            },
+            "scrape": {
+              "type": "boolean"
+            },
+            "last_scraped": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "last_reviewed": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "file_type": {
+              "type": "string",
+              "enum": ["HTML", "PDF", "DOC", "etc."]
+            },
+            "content_category": {
+              "type": "string",
+              "enum": ["About", "Research", "Academics", "People", "News", "Events", "General"]
+            },
+            "link_depth": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "keywords": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "metrics": {
+              "type": "object",
+              "properties": {
+                "word_count": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "criticality": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0
+                },
+                "popularity": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0
+                }
+              },
+              "required": ["word_count", "criticality", "popularity"]
+            },
+            "error_tracking": {
+              "type": "object",
+              "properties": {
+                "status_code": {
+                  "type": "integer"
+                },
+                "error_message": {
+                  "type": "string"
+                }
+              },
+              "required": ["status_code", "error_message"]
+            }
+          },
+          "required": ["relative_path", "last_mod", "change_freq", "priority", "scraping_allowed", "content_sensitivity", "scrape", "file_type", "content_category", "link_depth", "metrics", "error_tracking"]
+        }
+      }
+    },
+    "required": ["live_root", "sitemap_path", "dev_root", "pages"]
+  }
